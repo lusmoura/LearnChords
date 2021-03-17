@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 * {
   font-family: "Verdana", cursive, sans-serif;
   color: #ffffff;
@@ -114,4 +115,52 @@ button:focus {
 
 button svg {
   margin-right: 5px;
+}
+
+.question-image {
+  height: 50%;
+  width: 50%;
+}
+
+.App-intro-button {
+  margin: auto;
+  margin-left: 2%;
+  margin-right: 2%;
+  display: inline-block;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  width: 100%;
+  justify-content: center;
+  padding: 1em;
+  background-color: #234668;
+  color: #fff;
+}
+
+.footer {
+  height: 20px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.header-element {
+  margin: 0.2em 2em 0.2em;
+}
+
+.title {
+  font-size: 24px;
+  text-align: center;
+  background-color: #234668;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
+  margin-bottom: 1em;
 }
