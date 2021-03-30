@@ -33,7 +33,7 @@ function generateQuestion() {
 }
 
 function getTime(streak) {
-  return Math.max(Math.floor(-6/25*streak + 20), 1);
+  return Math.max(Math.floor(-6/25*streak + 20), 2);
 }
 
 export default function App() {
