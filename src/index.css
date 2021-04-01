@@ -91,7 +91,7 @@ button {
   border-radius: 15px;
   display: flex;
   padding: 5px;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   border: 5px solid #234668;
   cursor: pointer;
@@ -163,4 +163,9 @@ button svg {
   padding: 20px;
   box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
   margin-bottom: 1em;
+}
+
+.play {
+  align-self: center;
+  width: 50%; 
 }

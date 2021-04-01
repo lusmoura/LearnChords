@@ -32,13 +32,8 @@ function generateQuestion() {
 
   const answerOptions = random_answers.map(x => {
     const index = chords.indexOf(x);
-    console.log(x, index)
     return {'answerText': chords_names[index], 'isCorrect': (x === chords[curr_chord_pos])}
   });
-
-  console.log(random_answers);
-  console.log(chords[curr_chord_pos]);
-  console.log(answerOptions);
 
   const question = {
       questionText: qtext,
@@ -52,13 +47,14 @@ function getTime(streak) {
   return Math.max(Math.floor(-6/25*streak + 20), 2);
 }
 
-export default function App() {
+export default function AppImg() {
   const question = generateQuestion();
 
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [score, setScore] = useState(0);
 	const [streak, setStreak] = useState(0);
 	const [lastRight, setLastRight] = useState(null);
+	const [started, setStarted] = useState(false);
 
 	const handleAnswerOptionClick = (isCorrect) => {
 		if (isCorrect) {
@@ -73,8 +69,20 @@ export default function App() {
     const nextQuestion = currentQuestion + 1;
     setCurrentQuestion(nextQuestion);
   }
+
+  const handlePlayClick = () => {
+    setStarted(true);
+  }
+
+  if (!started) {
+    return (
+      <div className='app'> 
+        <button className='play' onClick={handlePlayClick}>Começar</button>
+      </div>
+    )
+  } 
   
-	return (
+  return (
     <div className='wrapper'>
       <div className='app'>
           <div className='question-section'>
@@ -94,6 +102,6 @@ export default function App() {
           </div>
       </div>
       <Timer time={getTime(streak)} question={currentQuestion}/>
-	</div>
-	);
+    </div>
+  );
 }

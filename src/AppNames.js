@@ -43,7 +43,8 @@ export default function App() {
 	const [score, setScore] = useState(0);
 	const [streak, setStreak] = useState(0);
 	const [lastRight, setLastRight] = useState(null);
-
+  const [started, setStarted] = useState(false);
+  
 	const handleAnswerOptionClick = (isCorrect) => {
 		if (isCorrect) {
 			setScore(score + 1);
@@ -57,6 +58,18 @@ export default function App() {
     const nextQuestion = currentQuestion + 1;
     setCurrentQuestion(nextQuestion);
   }
+
+  const handlePlayClick = () => {
+    setStarted(true);
+  }
+
+  if (!started) {
+    return (
+      <div className='app'> 
+        <button className='play' onClick={handlePlayClick}>Começar</button>
+      </div>
+    )
+  } 
   
 	return (
     <div className='wrapper'>

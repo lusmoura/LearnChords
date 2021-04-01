@@ -32,7 +32,7 @@ export default class Timer extends Component {
     }
 
     render() {
-        console.log(this.state.question, this.props.question)
+        //console.log(this.state.question, this.props.question)
         const seconds = this.state.seconds;
 
         return (
